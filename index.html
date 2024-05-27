@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjouslaskuri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jonnaonparaslol</h1>
+        <form id="tarjousLaskuri">
+            <label for="menu">Valitse Menu:</label>
+            <select id="menu" name="menu">
+                <option value="kana">Kana</option>
+                <option value="possu">Possu</option>
+                <option value="kasvis">Kasvis</option>
+                <option value="nauta">Nauta</option>
+            </select>
+
+            <label for="henkilot">Henkilömäärä:</label>
+            <input type="number" id="henkilot" name="henkilot" min="1" required>
+
+            <label for="budjetti">Budjetti per henkilö:</label>
+            <input type="number" id="budjetti" name="budjetti" min="1" required>
+
+            <button type="button" onclick="laskeTarjous()">Laske Tarjous</button>
+        </form>
+
+        <div id="tulos"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
