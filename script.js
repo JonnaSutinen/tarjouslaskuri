@@ -35,3 +35,4 @@ function laskeTarjous() {
         document.getElementById('tulos').innerText = `Kokonaiskustannus: ${kokonaisHinta} €`;
     }
 }
+}};
