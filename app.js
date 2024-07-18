@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Tofua punaisessa curryssa", price: 15.50 },
             { name: "Savu Tofua masman curryssa", price: 16.50 },
             { name: "Chili-Tofua", price: 15.50 },
-
         ],
         "Erikoisuuksia riisistä": [
             { name: "Khau Phat Kai", price: 15.50 },
@@ -74,8 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: "Hapanimelälohta", price: 21.50 },
             { name: "Lohta punaisessa curryssa", price: 21.50 }
         ],
-
-        };
+    };
 
     // Täytä ruokalajit nappeina
     for (let category in menu) {
@@ -180,22 +178,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // Päivitä kokonaishinta
     function updateTotalPrice() {
         let total = 0;
-        cartItems.querySelectorAll('li').forEach(li => {
-            let quantity = parseInt(li.querySelector('input').value);
-            let itemName = li.dataset.foodName;
-            let itemPrice = menu[getCategory(itemName)].find(food => food.name === itemName).price;
-            total += itemPrice * quantity;
+        Array.from(cartItems.children).forEach(li => {
+            let price = parseFloat(li.textContent.split(' - ')[1].slice(0, -2));
+            total += price;
         });
-        totalPrice.textContent = total.toFixed(2);
+        totalPrice.textContent = `Kokonaishinta: ${total.toFixed(2)} €`;
     }
 
-    // Etsi ruokalajin nimi ruoan nimen perusteella
-    function getCategory(foodName) {
-        for (let category in menu) {
-            if (menu[category].some(food => food.name === foodName)) {
-                return category;
-            }
+    // Nuolien toiminnallisuus ylös- ja alaspäin vierittäessä
+    const scrollToTopButton = document.getElementById('scrollToTop');
+    const scrollToBottomButton = document.getElementById('scrollToBottom');
+
+    // Näytä/piilota nuolet
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            scrollToTopButton.style.opacity = '1';
+            scrollToTopButton.style.visibility = 'visible';
+        } else {
+            scrollToTopButton.style.opacity = '0';
+            scrollToTopButton.style.visibility = 'hidden';
         }
-        return null;
-    }
+
+        if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 300) {
+            scrollToBottomButton.style.opacity = '0';
+            scrollToBottomButton.style.visibility = 'hidden';
+        } else {
+            scrollToBottomButton.style.opacity = '1';
+            scrollToBottomButton.style.visibility = 'visible';
+        }
+    });
+
+    // Klikkaustapahtuma ylöspäin nuolelle
+    scrollToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Klikkaustapahtuma alaspäin nuolelle
+    scrollToBottomButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+
+    // Alustus: näytä ensimmäisen ruokalajin ruoat
+    showFoods(Object.keys(menu)[0]);
 });
