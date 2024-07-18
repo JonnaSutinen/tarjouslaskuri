@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruokavalitsin</title>
     <link rel="stylesheet" href="styles1.css">
-
 </head>
-<a href="#" id="scrollToTop" class="scroll-to-top" title="Siirry sivun alkuun">↑</a>
-<a href="#" id="scrollToBottom" class="scroll-to-bottom" title="Siirry sivun alalaitaan">↓</a>
-
 <body>
-    
-    <div class="menu">
-        <h2>Valitse ruokalaji</h2>
-        <div id="categoryList" class="category-list"></div>
+    <div class="wrapper">
+        <div class="category-menu">
+            <h2>Valitse ruokalaji</h2>
+            <div id="categoryList" class="category-list"></div>
+        </div>
+        <div class="food-menu">
+            <h2>Ruokalajit</h2>
+            <div id="foodList" class="food-list"></div>
+        </div>
+        
+        <div class="cart">
+            <h2>Ostoskorisi</h2>
+            <ul id="cartItems"></ul>
+            <p class="total">Kokonaishinta: <span id="totalPrice">0</span> </p>
+        </div>
     </div>
-    <div class="menu">
-        <h2>Ruokalajit</h2>
-        <div id="foodList" class="food-list"></div>
-    </div>
-    <div class="cart">
-        <h2>Ostoskorisi</h2>
-        <ul id="cartItems"></ul>
-        <p class="total">Kokonaishinta: <span id="totalPrice">0</span> </p>
-    </div>
-
     <script src="app.js"></script>
 </body>
 </html>
