@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Yläpalkki (header) tyyli */
@@ -15,7 +18,8 @@ body {
     padding: 10px 20px;
     background-color: #333;
     color: white;
-    flex-wrap: wrap; /* Mahdollistaa yläpalkin elementtien siirtymisen seuraavalle riville pienemmillä näytöillä */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -32,7 +36,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
 /* Kategoriamenun tyyli */
@@ -193,6 +199,74 @@ body {
     margin-top: 20px;
 }
 
+/* Lomakkeen tyyli */
+.form-container {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Lomakkeen otsikon tyyli */
+.form-container h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Lomakkeen kenttien tyyli */
+.form-container label {
+    display: block;
+    margin-top: 10px;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+    color: #999;
+}
+
+.form-container textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Lomakkeen lähetysnappien tyyli */
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
 /* Responsiivisuus: pienet näytöt (kuten älypuhelimet) */
 @media (max-width: 768px) {
     .header {
@@ -213,7 +287,7 @@ body {
         padding: 10px;
     }
 
-    .category-menu, .food-menu, .cart {
+    .category-menu, .food-menu, .cart, .form-container {
         flex: none;
         margin-right: 0;
         margin-bottom: 20px;
@@ -222,11 +296,11 @@ body {
 
 /* Responsiivisuus: erittäin pienet näytöt (kuten vanhemmat älypuhelimet) */
 @media (max-width: 480px) {
-    .category-menu, .food-menu, .cart {
-        padding: 0px;
+    .category-menu, .food-menu, .cart, .form-container {
+        padding: 10px;
     }
 
-    .category-menu h2, .food-menu h2, .cart h2 {
+    .category-menu h2, .food-menu h2, .cart h2, .form-container h2 {
         font-size: 15px;
     }
 
@@ -240,5 +314,16 @@ body {
 
     .remove-button {
         padding: 3px 6px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .form-container button {
+        padding: 6px;
+        font-size: 12px;
     }
 }

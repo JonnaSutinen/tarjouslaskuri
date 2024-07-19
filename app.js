@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const categoryList = document.getElementById('categoryList');
-const foodList = document.getElementById('foodList');
-
+    const foodList = document.getElementById('foodList');
     const cartItems = document.getElementById('cartItems');
     const totalPrice = document.getElementById('totalPrice');
 
@@ -14,7 +13,6 @@ const foodList = document.getElementById('foodList');
             { name: "Tofua punaisessa curryssa", price: 15.50 },
             { name: "Savu Tofua masman curryssa", price: 16.50 },
             { name: "Chili-Tofua", price: 15.50 },
-
         ],
         "Erikoisuuksia riisistä": [
             { name: "Khau Phat Kai", price: 15.50 },
@@ -75,8 +73,7 @@ const foodList = document.getElementById('foodList');
             { name: "Hapanimelälohta", price: 21.50 },
             { name: "Lohta punaisessa curryssa", price: 21.50 }
         ],
-
-        };
+    };
 
     // Täytä ruokalajit nappeina
     for (let category in menu) {
@@ -200,5 +197,19 @@ const foodList = document.getElementById('foodList');
         return null;
     }
 
-    
+    // Täytä lomakkeen piilotetut kentät ennen lähettämistä
+    document.getElementById('orderForm').addEventListener('submit', function(event) {
+        var cartItemsData = [];
+        var totalPriceValue = totalPrice.textContent;
+
+        cartItems.querySelectorAll('li').forEach(function(item) {
+            var itemName = item.dataset.foodName;
+            var itemQuantity = item.querySelector('input[type="number"]').value;
+            var itemPrice = menu[getCategory(itemName)].find(food => food.name === itemName).price;
+            cartItemsData.push(itemName + ' x' + itemQuantity + ' - ' + (itemPrice * itemQuantity).toFixed(2) + ' €');
+        });
+
+        document.getElementById('cart-items-data').value = cartItemsData.join(', ');
+        document.getElementById('total-price').value = totalPriceValue;
+    });
 });

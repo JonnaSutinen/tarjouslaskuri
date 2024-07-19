@@ -26,6 +26,37 @@
             <p class="total">Kokonaishinta: <span id="totalPrice">0</span> €</p>
         </div>
     </div>
+    <div class="form-container">
+        <h2>Tilaustiedot</h2>
+        <form action="https://api.web3forms.com/submit" method="POST" id="orderForm">
+            <input type="hidden" name="access_key" value="134be8a9-e1a1-401d-bae4-b5cf44e2d135">
+            
+            <!-- Piilotetut kentät ostoskorin tiedoille -->
+            <input type="hidden" id="cart-items-data" name="cart-items-data">
+            <input type="hidden" id="total-price" name="total-price">
+            
+            <label for="event-date-time">Päivämäärä ja aika:</label>
+            <input type="datetime-local" id="event-date-time" name="event-date-time" required>
+            
+            <label for="event-location">Tilaisuuden sijainti:</label>
+            <input type="text" id="event-location" name="event-location" placeholder="Osoite tai tilan nimi" required>
+            
+            <label for="additional-info">Lisätiedot:</label>
+            <textarea id="additional-info" name="additional-info" placeholder="Kerro lisää tilaisuudestasi ja tarpeista tarjoilun ja lisäpalvelujen suhteen..."></textarea>
+            
+            <h2>Yhteystiedot</h2>
+            
+            <label for="name">Nimi:</label>
+            <input type="text" id="name" name="name" required>
+        
+            
+            <label for="phone">Puhelinnumero:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <button type="submit">Lähetä</button>
+        </form>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
+
