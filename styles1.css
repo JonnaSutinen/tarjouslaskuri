@@ -1,6 +1,6 @@
 /* Yleiset tyylit */
 body {
-    font-family: 'Proxima Nova';
+    font-family: 'Proxima Nova', sans-serif;
     background-color: #f5f5f5; /* Vaaleampi harmaa tausta */
     margin: 0;
     padding: 0;
@@ -8,6 +8,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Varmistaa, että body vie koko näytön korkeuden */
+}
+
+/* Taustakuva */
+body {
+    background: url('kuvat/tausta.jpg') no-repeat center center fixed;
+    background-size: cover; /* Kuvan koko ruudun kokoinen */
 }
 
 /* Yläpalkki (header) tyyli */
@@ -22,11 +29,13 @@ body {
     box-sizing: border-box;
 }
 
+/* Logo-tyyli */
 .logo {
     width: 50px;
     height: auto;
 }
 
+/* Yrityksen nimi */
 .company-name {
     font-size: 24px;
 }
@@ -38,14 +47,17 @@ body {
     padding: 20px;
     width: 100%;
     max-width: 1200px;
+    background-color: rgba(58, 58, 58, 0.6); /* Valkoinen tausta läpinäkyvyydellä */
     box-sizing: border-box;
+    flex: 1; /* Varmistaa, että wrapper vie kaiken käytettävissä olevan tilan */
+    flex-wrap: wrap; /* Sisältö wrap ympärille pienemmillä näytöillä */
 }
 
 /* Kategoriamenun tyyli */
 .category-menu {
     flex: 1 1 200px;
     margin-right: 20px;
-    background-color: #fff; /* Valkoinen tausta */
+    background-color: rgba(255, 255, 255, 0.934);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -79,7 +91,7 @@ body {
 .food-menu {
     flex: 2 1 300px;
     margin-right: 20px;
-    background-color: #fff; /* Valkoinen tausta */
+    background-color: rgba(255, 255, 255, 0.934);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -145,7 +157,7 @@ body {
 /* Ostoskorin tyyli */
 .cart {
     flex: 1 1 200px;
-    background-color: #fff; /* Valkoinen tausta */
+    background-color: rgba(255, 255, 255, 0.934);
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -207,7 +219,7 @@ body {
 /* Lomakkeen tyyli */
 .form-container {
     margin-top: 20px;
-    background-color: #fff; /* Valkoinen tausta */
+    background-color: rgba(255, 255, 255, 0.934); /* Valkoinen tausta läpinäkyvyydellä */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -273,6 +285,31 @@ body {
     background-color: #333; /* Tumma harmaa hover-tila */
 }
 
+/* Footerin tyyli */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Tumma tausta */
+    color: #fff; /* Valkoinen teksti */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content p {
+    margin: 10px 0;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
 /* Responsiivisuus: pienet näytöt (kuten älypuhelimet) */
 @media (max-width: 768px) {
     .header {
@@ -297,6 +334,10 @@ body {
         flex: none;
         margin-right: 0;
         margin-bottom: 20px;
+    }
+
+    .footer {
+        position: static; /* Poista footerin kiinnitys alareunaan pienillä näytöillä */
     }
 }
 
