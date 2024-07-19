@@ -1,7 +1,7 @@
 /* Yleiset tyylit */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Proxima Nova';
+    background-color: #f5f5f5; /* Vaaleampi harmaa tausta */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,8 +16,8 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #333;
-    color: white;
+    background-color: #000; /* Musta tausta */
+    color: #fff; /* Valkoinen teksti */
     width: 100%;
     box-sizing: border-box;
 }
@@ -45,7 +45,7 @@ body {
 .category-menu {
     flex: 1 1 200px;
     margin-right: 20px;
-    background-color: #fff;
+    background-color: #fff; /* Valkoinen tausta */
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -55,6 +55,7 @@ body {
 .category-menu h2 {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #000; /* Musta teksti */
 }
 
 /* Kategoriapainikkeiden tyyli */
@@ -63,22 +64,22 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Tumma harmaa tausta */
+    color: #fff; /* Valkoinen teksti */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .category-list button:hover {
-    background-color: #555;
+    background-color: #555; /* Vaaleampi tumma harmaa hover-tila */
 }
 
 /* Ruokalistojen tyyli */
 .food-menu {
     flex: 2 1 300px;
     margin-right: 20px;
-    background-color: #fff;
+    background-color: #fff; /* Valkoinen tausta */
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -88,6 +89,7 @@ body {
 .food-menu h2 {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #000; /* Musta teksti */
 }
 
 /* Ruoka-itemien tyyli */
@@ -99,12 +101,12 @@ body {
 .food-item {
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Vaalean harmaa reunus */
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #fff;
+    background-color: #fff; /* Valkoinen tausta */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     height: auto;
 }
@@ -113,6 +115,7 @@ body {
 .food-item span {
     font-size: 16px;
     flex: 1;
+    color: #000; /* Musta teksti */
 }
 
 /* Ruoka-itemin määräsyötekenttä */
@@ -128,21 +131,21 @@ body {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #333;
-    color: white;
+    background-color: #333; /* Tumma harmaa tausta */
+    color: #fff; /* Valkoinen teksti */
     cursor: pointer;
     flex-shrink: 0;
 }
 
 /* Ruoka-itemin nappien hover-tila */
 .food-item button:hover {
-    background-color: #555;
+    background-color: #555; /* Vaaleampi tumma harmaa hover-tila */
 }
 
 /* Ostoskorin tyyli */
 .cart {
     flex: 1 1 200px;
-    background-color: #fff;
+    background-color: #fff; /* Valkoinen tausta */
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -152,6 +155,7 @@ body {
 .cart h2 {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #000; /* Musta teksti */
 }
 
 /* Ostoskorin tuotteiden tyyli */
@@ -166,7 +170,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ddd; /* Vaalean harmaa reunus */
     margin-bottom: 10px;
 }
 
@@ -182,14 +186,14 @@ body {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #e74c3c;
-    color: white;
+    background-color: #e74c3c; /* Punainen tausta */
+    color: #fff; /* Valkoinen teksti */
     cursor: pointer;
 }
 
 /* Ostoskorin poistonapin hover-tila */
 .remove-button:hover {
-    background-color: #c0392b;
+    background-color: #c0392b; /* Tummempi punainen hover-tila */
 }
 
 /* Kokonaishinnan tyyli */
@@ -197,12 +201,13 @@ body {
     font-size: 16px;
     font-weight: bold;
     margin-top: 20px;
+    color: #000; /* Musta teksti */
 }
 
 /* Lomakkeen tyyli */
 .form-container {
     margin-top: 20px;
-    background-color: #fff;
+    background-color: #fff; /* Valkoinen tausta */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -220,6 +225,7 @@ body {
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
+    color: #000; /* Musta teksti */
 }
 
 /* Lomakkeen kenttien tyyli */
@@ -234,7 +240,7 @@ body {
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Vaalean harmaa reunus */
     border-radius: 4px;
     font-size: 14px;
     box-sizing: border-box;
@@ -242,7 +248,7 @@ body {
 
 .form-container input::placeholder,
 .form-container textarea::placeholder {
-    color: #999;
+    color: #999; /* Harmaa placeholder-teksti */
 }
 
 .form-container textarea {
@@ -254,8 +260,8 @@ body {
 .form-container button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
-    color: white;
+    background-color: #000; /* Musta tausta */
+    color: #fff; /* Valkoinen teksti */
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -264,7 +270,7 @@ body {
 }
 
 .form-container button:hover {
-    background-color: #0056b3;
+    background-color: #333; /* Tumma harmaa hover-tila */
 }
 
 /* Responsiivisuus: pienet näytöt (kuten älypuhelimet) */
