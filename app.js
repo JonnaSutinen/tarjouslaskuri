@@ -92,9 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
             let foodDiv = document.createElement('div');
             foodDiv.classList.add('food-item');
 
+          
             let foodName = document.createElement('span');
-            foodName.textContent = `${food.name} - ${food.price} €`;
-
+            foodName.innerHTML = `${food.name}<br>${food.price} €`;
+            
             let quantityInput = document.createElement('input');
             quantityInput.type = 'number';
             quantityInput.value = 1;

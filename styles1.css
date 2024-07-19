@@ -111,8 +111,8 @@ body {
 }
 
 .food-item {
-    margin-bottom: 15px;
-    padding: 10px;
+    margin-bottom: 1px;
+    padding: 20px;
     border: 1px solid #ddd; /* Vaalean harmaa reunus */
     border-radius: 5px;
     display: flex;
@@ -125,16 +125,16 @@ body {
 
 /* Ruoka-itemin tekstin tyyli */
 .food-item span {
-    font-size: 16px;
+    font-size: 15px;
     flex: 1;
     color: #000; /* Musta teksti */
 }
 
 /* Ruoka-itemin määräsyötekenttä */
 .food-item input[type="number"] {
-    width: 60px;
+    width: 20px;
     text-align: center;
-    margin: 0 10px;
+    margin: 0 5px;
     flex-shrink: 0;
 }
 
@@ -143,7 +143,7 @@ body {
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
-    background-color: #333; /* Tumma harmaa tausta */
+    background-color: #010101; /* Tumma harmaa tausta */
     color: #fff; /* Valkoinen teksti */
     cursor: pointer;
     flex-shrink: 0;
