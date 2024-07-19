@@ -1,217 +1,244 @@
 /* Yleiset tyylit */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8f9fa; /* Vaalean harmaa tausta */
-    color: #333333;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.wrapper {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff; /* Valkoinen tausta */
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Kevyt varjo */
+/* Yläpalkki (header) tyyli */
+.header {
     display: flex;
-    flex-wrap: wrap; /* Mahdollistaa rivin vaihdon pienillä näytöillä */
-}
-
-.category-menu {
-    flex: 1; /* Vie kaiken tilan jäljellä olevasta tilasta */
-    width: 100%; /* Täysi leveys */
-    background-color: lightgray;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cart {
-    flex: 1; /* Vie kaiken tilan jäljellä olevasta tilasta */
-    width: 100%; /* Täysi leveys */
-    background-color: lightblue;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-top: -10px; /* Vähennä ylämarginaalia, jos tarpeen */
-}
-
-.menu1 {
-    flex: 1; /* Vie kaiken tilan jäljellä olevasta tilasta */
-    width: 100%; /* Täysi leveys */
-    background-color: lightgreen;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 20px; /* Tarvittaessa lisää ylämarginaalia */
-}
-
-.category-menu h2,
-.food-menu h2,
-.menu h2,
-.cart h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #555555; /* Tummanharmaa otsikon väri */
-}
-
-.total-price {
-    text-align: right;
-    font-size: 18px; /* Pienennetty fonttikoko */
-    font-weight: bold;
-    margin-top: 20px;
-    color: #28a745; /* Vihreä hintatiedon väri */
-}
-
-.category-list button,
-.food-item button,
-.cart .remove-button {
-    background-color: #007bff; /* Sininen painikkeiden tausta */
-    color: #ffffff;
-    border: none;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-    font-size: 16px;
+    background-color: #333;
+    color: white;
+    flex-wrap: wrap; /* Mahdollistaa yläpalkin elementtien siirtymisen seuraavalle riville pienemmillä näytöillä */
 }
 
-.category-list button:hover,
-.food-item button:hover,
-.cart .remove-button:hover {
-    background-color: #0056b3; /* Tummempi sininen hover-tilassa */
-    transform: translateY(-2px);
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.company-name {
+    font-size: 24px;
+}
+
+/* Wrapperin tyyli, joka sisältää kaikki pääsisällöt */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Kategoriamenun tyyli */
+.category-menu {
+    flex: 1 1 200px;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Kategoriamenun otsikon tyyli */
+.category-menu h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Kategoriapainikkeiden tyyli */
+.category-list button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-list button:hover {
+    background-color: #555;
+}
+
+/* Ruokalistojen tyyli */
+.food-menu {
+    flex: 2 1 300px;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Ruokalistojen otsikon tyyli */
+.food-menu h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Ruoka-itemien tyyli */
+.food-list {
+    display: flex;
+    flex-direction: column;
 }
 
 .food-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
-    padding: 15px; /* Lisätty enemmän sisätilaa */
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 8px; /* Pyöristetyt reunat */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Kevyt varjo */
-    transition: background-color 0.3s, transform 0.3s;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: auto;
 }
 
-.food-item:hover {
-    background-color: #f2f2f2; /* Vaaleampi harmaa hover-tilassa */
-}
-
+/* Ruoka-itemin tekstin tyyli */
 .food-item span {
+    font-size: 16px;
     flex: 1;
-    font-size: 18px;
-    margin-bottom: 5px;
-    color: #333333; /* Tummanharmaa tekstin väri */
 }
 
+/* Ruoka-itemin määräsyötekenttä */
 .food-item input[type="number"] {
     width: 60px;
-    margin: 0 10px 10px 0;
-    padding: 8px;
-    border: 1px solid #cccccc;
+    text-align: center;
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+/* Ruoka-itemin nappien tyyli */
+.food-item button {
+    padding: 5px 10px;
+    border: none;
     border-radius: 5px;
-    font-size: 16px;
-    text-align: center;
-    background-color: #ffffff;
-    color: #333333;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
+/* Ruoka-itemin nappien hover-tila */
+.food-item button:hover {
+    background-color: #555;
+}
+
+/* Ostoskorin tyyli */
 .cart {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Kevyt varjo */
+    flex: 1 1 200px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Ostoskorin otsikon tyyli */
 .cart h2 {
-    text-align: center;
-    margin-bottom: 10px;
-    color: #555555; /* Tummanharmaa otsikon väri */
+    font-size: 18px;
+    margin-bottom: 15px;
 }
 
-.cart ul {
+/* Ostoskorin tuotteiden tyyli */
+#cartItems {
     list-style-type: none;
     padding: 0;
 }
 
-.cart li {
+/* Ostoskorin tuote-elementin tyyli */
+#cartItems li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
     margin-bottom: 10px;
-    padding: 15px; /* Lisätty enemmän sisätilaa */
-    background-color: #f2f2f2; /* Vaaleampi harmaa tausta */
-    border-radius: 8px; /* Pyöristetyt reunat */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Kevyt varjo */
 }
 
-.cart li input[type="number"] {
+/* Ostoskorin määräsyötekenttä */
+#cartItems input[type="number"] {
     width: 60px;
-    margin-right: 10px;
-    padding: 8px;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    font-size: 16px;
     text-align: center;
-    background-color: #ffffff;
-    color: #333333;
+    margin: 0 10px;
 }
 
-.total-price {
-    text-align: right;
-    font-size: 18px; /* Pienennetty fonttikoko */
+/* Ostoskorin poistonappi */
+.remove-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e74c3c;
+    color: white;
+    cursor: pointer;
+}
+
+/* Ostoskorin poistonapin hover-tila */
+.remove-button:hover {
+    background-color: #c0392b;
+}
+
+/* Kokonaishinnan tyyli */
+.total {
+    font-size: 16px;
     font-weight: bold;
     margin-top: 20px;
-    color: #28a745; /* Vihreä hintatiedon väri */
 }
 
-/* Mobiilityylit */
+/* Responsiivisuus: pienet näytöt (kuten älypuhelimet) */
 @media (max-width: 768px) {
-    .wrapper {
-        flex-direction: column; /* Pystysuuntainen asettelu mobiililaitteille */
-    }
-
-    .menu,
-    .cart {
-        width: 100%; /* Täysi leveys mobiililaitteilla */
-        padding-right: 0; /* Nollataan oikea sisennys */
-        padding-left: 0; /* Nollataan vasen sisennys */
-        order: 1; /* Järjestys mobiilinäkymässä */
-    }
-
-    .menu1 {
-        width: 100%; /* Täysi leveys mobiililaitteilla */
-        padding-right: 0; /* Nollataan oikea sisennys */
-        padding-left: 0; /* Nollataan vasen sisennys */
-        order: 2; /* Järjestys mobiilinäkymässä */
-    }
-
-    .food-item {
+    .header {
         flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
+        text-align: center;
     }
 
-    .food-item span,
-    .food-item button,
-    .food-item input[type="number"] {
-        width: 100%;
+    .logo {
         margin-bottom: 10px;
     }
 
-    .cart {
-        padding: 15px; /* Sisätilan lisäys */
+    .company-name {
+        font-size: 20px;
     }
 
-    .cart li {
-        padding: 15px; /* Sisätilan lisäys */
+    .wrapper {
+        flex-direction: column;
+        padding: 10px;
     }
 
-    .total-price {
-        text-align: left;
+    .category-menu, .food-menu, .cart {
+        flex: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsiivisuus: erittäin pienet näytöt (kuten vanhemmat älypuhelimet) */
+@media (max-width: 480px) {
+    .category-menu, .food-menu, .cart {
+        padding: 0px;
+    }
+
+    .category-menu h2, .food-menu h2, .cart h2 {
+        font-size: 15px;
+    }
+
+    .food-item span {
+        font-size: 14px;
+    }
+
+    .food-item input[type="number"] {
+        width: 50px;
+    }
+
+    .remove-button {
+        padding: 3px 6px;
     }
 }
