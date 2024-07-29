@@ -23,16 +23,18 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #000; /* Musta tausta */
+    background-color: #fcfbfb; /* Musta tausta */
     color: #fff; /* Valkoinen teksti */
     width: 100%;
     box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.751);
 }
 
 /* Logo-tyyli */
 .logo {
-    width: 50px;
+    width: 100px;
     height: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 /* Yrityksen nimi */
@@ -142,7 +144,7 @@ body {
 .food-item button {
     padding: 5px 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     background-color: #010101; /* Tumma harmaa tausta */
     color: #fff; /* Valkoinen teksti */
     cursor: pointer;
@@ -353,6 +355,7 @@ body {
 
     .food-item span {
         font-size: 14px;
+        
     }
 
     .food-item input[type="number"] {
